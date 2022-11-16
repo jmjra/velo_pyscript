@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+<title>Velo_JM 2022</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!--link rel="stylesheet" href="src/index.css" /-->
+
+</head>
+
+<py-env>
+- pandas
+- matplotlib
+
+</py-env>
+
+<body>
+<div id="conteneur" class="w3-container w3-blue">
+<h1>Sorties v&eacute;lo 2022</h1>
+
+<button id="bt_1" class="w3-button w3-round-xlarge w3-black w3-hover-yellow">Visualisation</button>
+
+<div class="w3-dropdown-hover">
+    <button class="w3-button w3-round-xlarge w3-black w3-hover-yellow">Type de pr&eacute;sentation</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button w3-hover-red">Cumul</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-green">Mois</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-blue">Semaine</a>
+    </div>
+  </div>
+<br />
+<br />
+<div id="donnees"class="w3-container w3-white w3-center w3-padding-16 w3-round-xlarge"></div>
+
+<div id="liens" class="w3-panel">
+    <a href="" target="_blank">Site Streamlit</a> |
+    <a href="https://sitejma.pagesperso-orange.fr" target="_blank">Site Orange</a> |
+    <a href="http://jmadnet.free.fr" target="_blank">Site Free</a>
+</div>
+
+
+<py-script src="src/index.py"></py-script>
+
+</div>
+</body>
+</html>
