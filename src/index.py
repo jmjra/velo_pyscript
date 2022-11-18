@@ -32,14 +32,13 @@ donnees = Element('donnees')
 
 message = """
 Visualisation des donn&eacute;es Strava
-
+<br />
 Principe :
-    - récup des donnes google sheet,
-    - traitement avec pandas,
-    - visualisation avec matplotlib.
-
-
-
+<ul>
+    <li>- récup des donnes google sheet,</li>
+    <li>- traitement avec pandas,</li>
+    <li>- visualisation avec matplotlib.</li>
+</ul>
 """
 
 affiche(donnees, message)
