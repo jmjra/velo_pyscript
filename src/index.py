@@ -30,9 +30,21 @@ e.addEventListener("click", click_proxy)
 
 donnees = Element('donnees')
 
-affiche(donnees, "Visualisation des donn&eacute;es")
+message = """
+Visualisation des donn&eacute;es Strava
 
-# df = pd.read_csv(DONNEES)
+Principe :
+    - récup des donnes google sheet,
+    - traitement avec pandas,
+    - visualisation avec matplotlib.
+
+
+
+"""
+
+affiche(donnees, message)
+
+
 
 
 

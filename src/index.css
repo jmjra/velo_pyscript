@@ -1,4 +1,4 @@
-#conteneur {
+/*#conteneur {
 
     width: 80%;
     margin-left: auto;
@@ -17,4 +17,7 @@ h1 {
 #donnees {
 
     padding-left: 5cm;
+}*/
+#donnees {
+    min-height: 8cm;
 }
