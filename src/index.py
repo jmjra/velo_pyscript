@@ -34,8 +34,9 @@ message = """
 Visualisation des donn&eacute;es Strava
 <br />
 Principe :
-    - récup des donnes google sheet,
-    - traitement avec pandas,
+<br />
+    - récup des donnes google sheet,<br />
+    - traitement avec pandas,<br />
     - visualisation avec matplotlib.
 """
 
