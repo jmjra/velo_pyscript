@@ -13,26 +13,38 @@
 
 </head>
 
+<!--py-config type="json">
+{
+  "packages":["pandas", "matplotlib"],
+  "fetch": [{
+    "files": ["./utils.py"]
+  }]
+
+}
+</py-config-->
+
 <py-env>
 - pandas
 - matplotlib
-
+- paths:
+  - ./src/utils.py
 </py-env>
 
 <body>
 <div id="conteneur" class="w3-container w3-gray">
 <h1>Sorties v&eacute;lo 2022</h1>
 
-<button id="bt_1" class="w3-button w3-round-xlarge w3-black w3-hover-yellow">Visualisation</button>
+<button id="bt_visu" class="w3-button w3-round-xlarge w3-black w3-hover-yellow">Visualisation</button>
 
 <div class="w3-dropdown-hover">
     <button class="w3-button w3-round-xlarge w3-black w3-hover-yellow">Type de pr&eacute;sentation</button>
     <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-gray w3-round">
-      <a href="#" class="w3-bar-item w3-button w3-hover-red w3-gray w3-round">Cumul</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-green w3-gray w3-round">Mois</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-blue w3-gray w3-round">Semaine</a>
+      <a href ="#" id="cumul" class="w3-bar-item w3-button w3-hover-red w3-gray w3-round">Cumul</a>
+      <a id="mois" class="w3-bar-item w3-button w3-hover-green w3-gray w3-round">Mois</a>
+      <a id="semaine" class="w3-bar-item w3-button w3-hover-blue w3-gray w3-round">Semaine</a>
     </div>
   </div>
+  <span id="message"></span>
 <br />
 <br />
 <div id="donnees"class="w3-container w3-white w3-center w3-padding-16 w3-round-xlarge"></div>
