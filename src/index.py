@@ -1,43 +1,46 @@
 import pandas as pd
 import js
 from pyodide.ffi import create_proxy
-from pyodide.http import open_url
+# from pyodide.http import open_url
 import utils as ut
 
 
 # DONNEES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBmY_1b2XT94E60Ma_PcEVQcuonGk6r9DR-oXNB2KhrmoQtoJRfkjuqzN-w1XR8HXN0j3h_JLYyqUm/pub?gid=0&single=true&output=csv"
+flag = 0
 
-def recup_donnees(event):
-    # dico = {"nom":['ADNET','Brunel'], "prenom":['jm','pascale']}
-    DONNEES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBmY_1b2XT94E60Ma_PcEVQcuonGk6r9DR-oXNB2KhrmoQtoJRfkjuqzN-w1XR8HXN0j3h_JLYyqUm/pub?gid=0&single=true&output=csv"
-    _data = open_url(DONNEES)
 
-    df = pd.read_csv(_data)
-    df = df.drop(columns=['commentaire'])
-    df = df[1:-2]
+def traitement_donnees(event):
+
+    global flag
+    # global df
 
     do = Element('donnees')
     do.clear()
-    # do.write(f"Nombre de sorties : {len(df['mètres'])}")
-    do.write("<img src='images/cumul_velo.png' />")
+    if flag == 0:
+        do.write(f"""Nombre de sorties : {len(df['mètres'])}</br>
+        kilométrage estimé : {len(df['mètres'])*80} km""")
+        flag = 1
+    else:
+        do.write("<img src='images/cumul_velo.png' />")
+        flag = 0
 
 def fn_cumul(event):
     _temp = "Passage par cumul"
     # js.alert(_temp)
-    ut.aff(message, _temp)
+    ut.affiche(message, _temp)
     
 def fn_semaine(event):
     _temp = "Passage par semaine"
     # js.alert(_temp)
-    ut.aff(message, _temp)
+    ut.affiche(message, _temp)
 
 def fn_mois(event):
     _temp = "Passage par mois"
     # js.alert(_temp)
-    ut.aff(message, _temp)
+    ut.affiche(message, _temp)
 
 
-click_bt_visu = create_proxy(recup_donnees)
+click_bt_visu = create_proxy(traitement_donnees)
 e = js.document.getElementById("bt_visu")
 e.addEventListener("click", click_bt_visu)
 
@@ -70,8 +73,12 @@ Principe :
     - visualisation avec matplotlib.
 """
 
+# chargement des données
+
+df = ut.recup_donnees()
+
 # affiche(donnees, message)
-ut.aff(donnees, info)
+ut.affiche(donnees, info)
 
 
 
