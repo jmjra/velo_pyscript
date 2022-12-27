@@ -17,8 +17,8 @@ def traitement_donnees(event):
     do = Element('donnees')
     do.clear()
     if flag == 0:
-        do.write(f"""Nombre de sorties : {len(df['mètres'])}</br>
-        kilométrage estimé : {len(df['mètres'])*80} km""")
+        do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
+        kilométrage estimé : {len(df['mètres'])*80} km"""
         flag = 1
     else:
         do.write("<img src='images/cumul_velo.png' />")
