@@ -5,7 +5,8 @@ from pyodide.http import open_url
 # affichage sur un id
 
 def affiche(id, data):
-    id.write(data)
+    #id.write(data)
+    display(data, target=id)
 
 # récupération des donnees sur googlesheets
 
