@@ -1,4 +1,4 @@
-import js
+#import js
 import pandas as pd
 from pyodide.http import open_url
 
@@ -6,7 +6,7 @@ from pyodide.http import open_url
 
 def affiche(id, data):
     #id.write(data)
-    js.display(data, target=id)
+    display(data, target=id)
 
 # récupération des donnees sur googlesheets
 
