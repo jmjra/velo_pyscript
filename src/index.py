@@ -22,7 +22,8 @@ def traitement_donnees(event):
         flag = 1
     else:
         #do.write("<img src='images/cumul_velo.png' />")
-        display("<img src='images/cumul_velo.png' />", target="donnees')
+        do.element.innerHTML = "<img src='images/cumul_velo.png' />"
+        #display("<img src='images/cumul_velo.png' />", target="donnees')
         flag = 0
 
 def fn_cumul(event):
