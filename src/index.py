@@ -2,7 +2,7 @@ import pandas as pd
 import js
 from pyodide.ffi import create_proxy
 # from pyodide.http import open_url
-import src.utils as ut
+import utils as ut
 
 
 # DONNEES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBmY_1b2XT94E60Ma_PcEVQcuonGk6r9DR-oXNB2KhrmoQtoJRfkjuqzN-w1XR8HXN0j3h_JLYyqUm/pub?gid=0&single=true&output=csv"
