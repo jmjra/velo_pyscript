@@ -30,7 +30,7 @@ def fn_cumul(event):
     _temp = "Passage par cumul"
     # js.alert(_temp)
     ut.affiche(message, df.shape)
-    ut.affiche(donnees, df.sample(10))
+    ut.affiche(donnees, df.sample(10).to_html())
     
 def fn_semaine(event):
     _temp = "Passage par semaine"
