@@ -29,7 +29,7 @@ def traitement_donnees(event):
 def fn_cumul(event):
     _temp = "Passage par cumul"
     # js.alert(_temp)
-    ut.affiche(message, _temp)
+    ut.affiche(message, df.shape)
     
 def fn_semaine(event):
     _temp = "Passage par semaine"
