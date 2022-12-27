@@ -22,7 +22,7 @@ def traitement_donnees(event):
         flag = 1
     else:
         #do.write("<img src='images/cumul_velo.png' />")
-        do.element.innerHTML = "<img src='images/cumul_velo.png' />"
+        do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
         flag = 0
 
@@ -65,7 +65,7 @@ message = Element("message")
 mois = Element("mois")
 
 
-info = """
+info = f"""
 Visualisation des donn&eacute;es Strava
 <br />
 Principe :
