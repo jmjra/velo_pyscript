@@ -42,7 +42,7 @@ def fn_mois(event):
     donnees.clear()
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
-    ut.affiche(donnees, d_mois.to_html())
+    ut.affiche(donnees, df_mois.to_html())
 
 
 click_bt_visu = create_proxy(traitement_donnees)
@@ -85,6 +85,7 @@ df['date'] = pd.to_datetime(df['date'], format="%d/%m/%Y" )
 df['jour'] = df.date.dt.day
 df['mois'] = df.date.dt.month
 df['sem'] = df.date.dt.isocalendar().week
+df['mètres'] = df['mètres'].apply(lambda x : x.replace(",","."))
 df['cum'] = df['mètres'].cumsum()/1000
 
 
