@@ -81,10 +81,10 @@ Principe :
 # chargement des données
 
 df = ut.recup_donnees()
-df['date'] = pd.to_datetime(df['date'], format="%d/%m/%Y" )
-df['jour'] = df.date.dt.day
-df['mois'] = df.date.dt.month
-df['sem'] = df.date.dt.isocalendar().week
+#df['date'] = pd.to_datetime(df['date'], format="%d/%m/%Y" )
+#df['jour'] = df.date.dt.day
+#df['mois'] = df.date.dt.month
+#df['sem'] = df.date.dt.isocalendar().week
 df['mètres'] = df['mètres'].apply(lambda x: ''.join(x.split()))
 df['mètres'] = df['mètres'].apply(lambda x : str(x).replace(",","."))
 df['mètres'] = df['mètres'].astype('float')
