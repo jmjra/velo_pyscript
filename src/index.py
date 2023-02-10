@@ -41,8 +41,8 @@ def fn_mois(event):
     _temp = "Cumul mois"
     donnees.clear()
     ut.affiche(message, _temp)
-    #d_mois = df.groupby(['mois'])['km (cumul)'].cumsum()/1000
-    ut.affiche(donnees, df['mois'].to_string())
+    d_mois = df.groupby(['mois'])['km (cumul)'].cumsum()/1000
+    ut.affiche(donnees, d_mois.to_html())
 
 
 click_bt_visu = create_proxy(traitement_donnees)
