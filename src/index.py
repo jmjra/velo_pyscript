@@ -39,7 +39,7 @@ def fn_semaine(event):
 
 def fn_mois(event):
     _temp = "Cumul mois"
-    donnees.clear()
+    #donnees.clear()
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
     ut.affiche(donnees, df_mois)
