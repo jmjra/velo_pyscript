@@ -87,6 +87,7 @@ df['mois'] = df.date.dt.month
 df['sem'] = df.date.dt.isocalendar().week
 df['mètres'] = df['mètres'].apply(lambda x: ''.join(x.split()))
 df['mètres'] = df['mètres'].apply(lambda x : str(x).replace(",","."))
+df['mètres'] = df['mètres'].astype('float')
 df['cum'] = df['mètres'].cumsum()/1000
 
 
