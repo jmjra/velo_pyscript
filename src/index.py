@@ -41,7 +41,7 @@ def fn_mois(event):
     _temp = "Cumul mois"
     donnees.clear()
     ut.affiche(message, _temp)
-    d_mois = df.groupby(['mois'])['km (cumul)'].cumsum()/1000
+    df_mois = df.groupby('mois')['mètres'].sum()/1000
     ut.affiche(donnees, d_mois.to_html())
 
 
@@ -81,7 +81,11 @@ Principe :
 # chargement des données
 
 df = ut.recup_donnees()
-df['mois'] = df['date'].apply(lambda _date: str(_date).split('/')[1])
+df['date'] = pd.to_datetime(df['date'], format="%d/%m/%Y" )
+df['jour'] = df.date.dt.day
+df['mois'] = df.date.dt.month
+df['sem'] = df.date.dt.isocalendar().week
+df['cum'] = df['mètres'].cumsum()/1000
 
 
 
