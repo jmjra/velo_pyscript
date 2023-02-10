@@ -41,6 +41,8 @@ def fn_mois(event):
     _temp = "Passage par mois"
     # js.alert(_temp)
     ut.affiche(message, _temp)
+    d_mois = df.groupby(['mois'])['km (cumul)'].cumsum()/1000
+    ut.affiche(donnees, d_mois)
 
 
 click_bt_visu = create_proxy(traitement_donnees)
@@ -79,6 +81,9 @@ Principe :
 # chargement des données
 
 df = ut.recup_donnees()
+df['mois'] = df['date'].apply(lambda _date: str(_date).split('/')[1])
+
+
 
 # affiche(donnees, message)
 ut.affiche(donnees, info)
