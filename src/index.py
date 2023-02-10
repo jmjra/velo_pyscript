@@ -39,10 +39,10 @@ def fn_semaine(event):
 
 def fn_mois(event):
     _temp = "Passage par mois"
-    # js.alert(_temp)
+    donnees.clear()
     ut.affiche(message, _temp)
     d_mois = df.groupby(['mois'])['km (cumul)'].cumsum()/1000
-    ut.affiche(donnees, d_mois)
+    ut.affiche(donnees, df['mois'])
 
 
 click_bt_visu = create_proxy(traitement_donnees)
