@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import js
 from pyodide.ffi import create_proxy
 # from pyodide.http import open_url
@@ -42,7 +43,11 @@ def fn_mois(event):
     #donnees.clear()
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
-    ut.affiche(donnees, df_mois[2])
+    _x = df_mois.index
+    fig, ax = plt.subplots()
+    ax = plt.hist(_x,df_mois)
+    
+    ut.affiche(donnees, fig)
 
 
 click_bt_visu = create_proxy(traitement_donnees)
