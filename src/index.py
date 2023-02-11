@@ -42,7 +42,7 @@ def fn_mois(event):
     #donnees.clear()
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
-    ut.affiche(donnees, df_mois.to_html())
+    ut.affiche(donnees, df_mois[2])
 
 
 click_bt_visu = create_proxy(traitement_donnees)
