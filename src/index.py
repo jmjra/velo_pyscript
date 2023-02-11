@@ -13,6 +13,7 @@ flag = 0
 def traitement_donnees(event):
 
     global flag
+    flag = 1
     # global df
 
     do = Element('donnees')
@@ -25,29 +26,56 @@ def traitement_donnees(event):
         #do.write("<img src='images/cumul_velo.png' />")
         do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
-        flag = 0
+        #flag = 0
 
 def fn_cumul(event):
     _temp = "Passage par cumul"
-    # js.alert(_temp)
-    ut.affiche(message, df.shape)
+    
+    ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
     ut.affiche(donnees, df.tail(10).to_html())
+    
+    fig, ax = plt.subplots(figsize=(3,3))
+
+    #ax.set_xticks(rotation = 30)
+    ax.tick_params(axis='x', labelrotation = 45)
+    
+    ax = plt.plot(df['nb jours'], df['cum'], 'o--', color='teal')
+    
+    display(fig, target="donnees")
+
+
+
     
 def fn_semaine(event):
     _temp = "Passage par semaine"
-    # js.alert(_temp)
+
+    donnees.element.innerHTML = ""
+
+    _x = df['sem'].to_list()
+    _y = df['mètres']/1000
+
+    fig, ax = plt.subplots(figsize=(4,4))
+    ax.set_xlim(0,53)
+    ax = plt.plot(_x,_y, 'o--', color='green' )
+    
     ut.affiche(message, _temp)
+
+    display(fig, target="donnees")
+
 
 def fn_mois(event):
     _temp = "Cumul mois"
     #donnees.clear()
+    donnees.element.innerHTML = ""
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
-    _x = df_mois.index
-    fig, ax = plt.subplots()
-    ax = plt.hist(_x,df_mois)
-    
-    ut.affiche(donnees, fig)
+    _x = df_mois.index.to_list()
+    fig, ax = plt.subplots(figsize=(3,3))
+    ax.set_xlim(0,13)
+    ax = plt.bar(_x,df_mois, width=0.5, align="center")
+
+    #ut.affiche(donnees, df_mois[2])
+    display(fig, target="donnees")
 
 
 click_bt_visu = create_proxy(traitement_donnees)
