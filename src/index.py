@@ -70,9 +70,9 @@ def fn_mois(event):
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
     _x = df_mois.index.to_list()
-    fig, ax = plt.subplots(figsize=(3,3))
+    fig, ax = plt.subplots(figsize=(5,5))
     ax.set_xlim(0,13)
-    ax = plt.bar(_x,df_mois, width=0.5, align="center")
+    ax = plt.bar(_x,df_mois, width=0.8, align="center")
 
     #ut.affiche(donnees, df_mois[2])
     display(fig, target="donnees")
