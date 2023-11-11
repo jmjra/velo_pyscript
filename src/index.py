@@ -30,11 +30,10 @@ def traitement_donnees(event):
 
 def fn_cumul(event):
     _temp = "Cumul des sorties de l'année"
-    
+
+    donnees.element.innerHTML = ""    
     ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
-    #ut.affiche(donnees, df.tail(10).to_html())
-    donnees.element.innerHTML = ""
-    
+
     fig, ax = plt.subplots(figsize=(5,5))
 
     #ax.set_xticks(rotation = 30)
