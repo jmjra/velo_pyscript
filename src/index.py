@@ -57,7 +57,7 @@ def fn_semaine(event):
     fig, ax = plt.subplots(figsize=(4,4))
     ax.set_xlim(0,53)
     #ax = plt.plot(_x,_y, 'o--', color='green' )
-    ax = plt.stem(_x,_y, '--g')
+    ax = plt.stem(_x,_y)
     ut.affiche(message, _temp)
 
     display(fig, target="donnees")
