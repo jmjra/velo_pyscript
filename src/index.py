@@ -82,7 +82,7 @@ def fn_tableau(event):
     #donnees.clear()
     donnees.element.innerHTML = ""
     ut.affiche(message, _temp)
-    ut.affiche(donnees, df.to_html())
+    ut.affiche(donnees, df.tail(20).to_html())
 
     
 
