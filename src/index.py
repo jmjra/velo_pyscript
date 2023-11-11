@@ -94,6 +94,13 @@ click_bt_mois = create_proxy(fn_mois)
 e = js.document.getElementById("mois")
 e.addEventListener("click", click_bt_mois)
 
+click_bt_tableau = create_proxy(fn_mois)
+e = js.document.getElementById("mois")
+e.addEventListener("click", click_bt_mois)
+
+
+
+
 donnees = Element('donnees')
 cumul = Element("cumul")
 semaine = Element("semaine")
