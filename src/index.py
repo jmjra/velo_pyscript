@@ -29,12 +29,12 @@ def traitement_donnees(event):
         #flag = 0
 
 def fn_cumul(event):
-    _temp = "Passage par cumul"
+    _temp = "Cumul des sorties de l'année"
     
     ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
     ut.affiche(donnees, df.tail(10).to_html())
     
-    fig, ax = plt.subplots(figsize=(3,3))
+    fig, ax = plt.subplots(figsize=(5,5))
 
     #ax.set_xticks(rotation = 30)
     ax.tick_params(axis='x', labelrotation = 45)
