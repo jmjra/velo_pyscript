@@ -33,6 +33,7 @@ def fn_cumul(event):
     
     ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
     #ut.affiche(donnees, df.tail(10).to_html())
+    donnees.element.innerHTML = ""
     
     fig, ax = plt.subplots(figsize=(5,5))
 
