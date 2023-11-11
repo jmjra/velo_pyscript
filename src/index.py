@@ -32,7 +32,7 @@ def fn_cumul(event):
     _temp = "Cumul des sorties de l'année"
     
     ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
-    ut.affiche(donnees, df.tail(10).to_html())
+    #ut.affiche(donnees, df.tail(10).to_html())
     
     fig, ax = plt.subplots(figsize=(5,5))
 
@@ -77,6 +77,16 @@ def fn_mois(event):
     #ut.affiche(donnees, df_mois[2])
     display(fig, target="donnees")
 
+def fn_tableau(event):
+    _temp = "Détail des sorties
+    #donnees.clear()
+    donnees.element.innerHTML = ""
+    ut.affiche(message, _temp)
+    ut.affiche(donnees, df.to_html())
+
+    
+
+
 
 click_bt_visu = create_proxy(traitement_donnees)
 e = js.document.getElementById("bt_visu")
@@ -94,9 +104,9 @@ click_bt_mois = create_proxy(fn_mois)
 e = js.document.getElementById("mois")
 e.addEventListener("click", click_bt_mois)
 
-click_bt_tableau = create_proxy(fn_mois)
-e = js.document.getElementById("mois")
-e.addEventListener("click", click_bt_mois)
+click_bt_tableau = create_proxy(fn_tableau)
+e = js.document.getElementById("bt_tableau")
+e.addEventListener("click", click_bt_tableau)
 
 
 
