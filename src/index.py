@@ -78,7 +78,7 @@ def fn_mois(event):
     display(fig, target="donnees")
 
 def fn_tableau(event):
-    _temp = "Détail des sorties
+    _temp = "Détail des sorties"
     #donnees.clear()
     donnees.element.innerHTML = ""
     ut.affiche(message, _temp)
