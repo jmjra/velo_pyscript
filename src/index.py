@@ -137,7 +137,7 @@ Visualisation des donn&eacute;es Strava
 <br />
 Total 2023 :
 <br />
-    - Cumul = {df['cum'].loc[index.max()]} km,<br />
+    - Cumul = {df['cum'].loc[df.index.max()]} km,<br />
     - Type de vélo : ,<br />
     - .
 """
