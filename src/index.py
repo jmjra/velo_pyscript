@@ -139,8 +139,8 @@ Total 2023 :
 <br />
     - Cumul = {df['cum'].to_list()[-1]} km,<br />
     - Type de vélo : <br />
-        # pelso : {bilan_cat['pelso']} km <br />
-        # wilierT : {bilan_cat['wilierT']} km
+        # pelso : {bilan_cat} km <br />
+        # wilierT : xxxx km
 """
 
 
