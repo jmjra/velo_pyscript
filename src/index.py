@@ -14,11 +14,6 @@ flag = 0
 def traitement_donnees(event):
 
     global flag
-    if flag == 0:
-        flag = 1
-    else:
-        flag = 0
-    # global df
 
     do = Element('donnees')
     do.clear()
@@ -28,7 +23,7 @@ def traitement_donnees(event):
         
         do.element.innerHTML = info
         flag = 1
-    else:
+    if flag == 1
         #do.write("<img src='images/cumul_velo.png' />")
         do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
