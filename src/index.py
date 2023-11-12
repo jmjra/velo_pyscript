@@ -118,15 +118,6 @@ message = Element("message")
 mois = Element("mois")
 
 
-info = f"""
-Visualisation des donn&eacute;es Strava
-<br />
-Total 2023 :
-<br />
-    - Cumul = {df['cum'][-1]} km,<br />
-    - Type de vélo : ,<br />
-    - .
-"""
 
 # chargement des données
 
@@ -141,6 +132,15 @@ df['mètres'] = df['mètres'].astype('float')
 df['cum'] = df['mètres'].cumsum()/1000
 bilan_cat = df.groupby('vélo')['mètres'].cumsum()/1000
 
+info = f"""
+Visualisation des donn&eacute;es Strava
+<br />
+Total 2023 :
+<br />
+    - Cumul = {df['cum'][-1]} km,<br />
+    - Type de vélo : ,<br />
+    - .
+"""
 
 
 # affiche(donnees, message)
