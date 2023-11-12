@@ -121,11 +121,11 @@ mois = Element("mois")
 info = f"""
 Visualisation des donn&eacute;es Strava
 <br />
-Principe :
+Total 2023 :
 <br />
-    - récup des données google sheet,<br />
-    - traitement avec pandas,<br />
-    - visualisation avec matplotlib.
+    - Cumul = {df['cum'][-1]} km,<br />
+    - Type de vélo : ,<br />
+    - .
 """
 
 # chargement des données
@@ -139,6 +139,7 @@ df['mètres'] = df['mètres'].apply(lambda x: ''.join(x.split()))
 df['mètres'] = df['mètres'].apply(lambda x : str(x).replace(",","."))
 df['mètres'] = df['mètres'].astype('float')
 df['cum'] = df['mètres'].cumsum()/1000
+bilan_cat = df.groupby('vélo')['mètres'].cumsum()/1000
 
 
 
