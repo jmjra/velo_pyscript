@@ -25,7 +25,7 @@ def traitement_donnees(event):
         do.element.innerHTML = info
         flag += 1
         
-    else
+    else:
         #do.write("<img src='images/cumul_velo.png' />")
         do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
