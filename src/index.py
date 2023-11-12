@@ -14,7 +14,10 @@ flag = 0
 def traitement_donnees(event):
 
     global flag
-    # flag = 1
+    if flag == 0:
+        flag = 1
+    else:
+        flag = 0
     # global df
 
     do = Element('donnees')
@@ -131,7 +134,7 @@ df['mètres'] = df['mètres'].apply(lambda x: ''.join(x.split()))
 df['mètres'] = df['mètres'].apply(lambda x : str(x).replace(",","."))
 df['mètres'] = df['mètres'].astype('float')
 df['cum'] = df['mètres'].cumsum()/1000
-bilan_cat = df.groupby('vélo')['mètres'].cumsum()/1000
+bilan_cat = df.groupby('vélo')['mètres'].sum()/1000
 
 info = f"""
 Visualisation des donn&eacute;es Strava
@@ -140,8 +143,8 @@ Total 2023 :
 <br />
     - Cumul = {df['cum'].to_list()[-1]} km,<br />
     - Type de vélo : <br />
-        # pelso : {bilan_cat.to_list()[-1]} km <br />
-        # wilierT : xxxx km
+        # pelso : {bilan_cat['pelso']:0.2f} km <br />
+        # wilierT : {bilan_cat['wilierT']:0.2f} km
 """
 
 
