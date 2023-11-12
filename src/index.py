@@ -23,14 +23,16 @@ def traitement_donnees(event):
     do = Element('donnees')
     do.clear()
     if flag == 0:
-        do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
-        kilométrage estimé : {len(df['mètres'])*80} km"""
+        #do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
+        #kilométrage estimé : {len(df['mètres'])*80} km"""
+        
+        do.element.innerHTML = info
         flag = 1
     else:
         #do.write("<img src='images/cumul_velo.png' />")
         do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
-        #flag = 0
+        flag = 0
 
 def fn_cumul(event):
     _temp = "Cumul des sorties de l'année"
