@@ -7,13 +7,14 @@ import utils as ut
 
 
 # DONNEES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBmY_1b2XT94E60Ma_PcEVQcuonGk6r9DR-oXNB2KhrmoQtoJRfkjuqzN-w1XR8HXN0j3h_JLYyqUm/pub?gid=0&single=true&output=csv"
+global flag
 flag = 0
 
 
 def traitement_donnees(event):
 
     global flag
-    flag = 1
+    # flag = 1
     # global df
 
     do = Element('donnees')
@@ -139,7 +140,7 @@ Total 2023 :
 <br />
     - Cumul = {df['cum'].to_list()[-1]} km,<br />
     - Type de vélo : <br />
-        # pelso : {bilan_cat} km <br />
+        # pelso : {bilan_cat.to_list()[-1]} km <br />
         # wilierT : xxxx km
 """
 
