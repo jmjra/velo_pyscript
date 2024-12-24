@@ -15,8 +15,8 @@ def traitement_donnees(event):
 
     global flag
 
-    
-    do = Element('donnees')
+    do = js.document.getElementById("donnees")
+    #do = Element('donnees')
     do.clear()
     if flag%2:
         #do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
