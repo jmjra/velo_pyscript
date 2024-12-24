@@ -7,7 +7,8 @@ from pyodide.http import open_url
 def affiche(id, data):
     #id.write(data)
     #display(data, target=id)
-    id.element.innerHTML = data
+    #id.element.innerHTML = data
+    id.innerHTML = data
 
 # récupération des donnees sur googlesheets
 
