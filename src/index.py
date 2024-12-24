@@ -116,11 +116,16 @@ e.addEventListener("click", click_bt_tableau)
 
 
 
-donnees = Element('donnees')
-cumul = Element("cumul")
-semaine = Element("semaine")
-message = Element("message")
-mois = Element("mois")
+#donnees = Element('donnees')
+donnees =js.document.getElementById("donnees")
+#cumul = Element("cumul")
+cumul = js.document.getElementById("cumul")
+#semaine = Element("semaine")
+semaine = js.document.getElementById("semaine")
+#message = Element("message")
+message = js.document.getElementById("message")
+#mois = Element("mois")
+mois = js.document.getElementById("mois")
 
 
 
