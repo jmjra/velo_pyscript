@@ -17,7 +17,8 @@ def traitement_donnees(event):
 
     do = js.document.getElementById("donnees")
     #do = Element('donnees')
-    do.clear()
+    #do.clear()
+    do.innerHTML = ""
     if flag%2:
         #do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
         #kilométrage estimé : {len(df['mètres'])*80} km"""
