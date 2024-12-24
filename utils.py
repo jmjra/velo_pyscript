@@ -1,4 +1,4 @@
-#import js
+import js
 import pandas as pd
 from pyodide.http import open_url
 
