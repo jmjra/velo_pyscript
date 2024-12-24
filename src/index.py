@@ -22,12 +22,13 @@ def traitement_donnees(event):
         #do.element.innerHTML = f"""Nombre de sorties : {len(df['mètres'])}</br>
         #kilométrage estimé : {len(df['mètres'])*80} km"""
     
-        do.element.innerHTML = info
+        #do.element.innerHTML = info
+        do.innerHTML = info
         flag += 1
         
     else:
         #do.write("<img src='images/cumul_velo.png' />")
-        do.element.innerHTML = f"<img src='images/cumul_velo.png' />"
+        do.innerHTML = f"<img src='images/cumul_velo.png' />"
         #display("<img src='images/cumul_velo.png' />", target="donnees')
         flag += 1
 
@@ -36,7 +37,7 @@ def traitement_donnees(event):
 def fn_cumul(event):
     _temp = "Cumul des sorties de l'année"
 
-    donnees.element.innerHTML = ""    
+    donnees.innerHTML = ""    
     ut.affiche(message, f"nombre de sorties = {df.shape[0]}")
 
     fig, ax = plt.subplots(figsize=(5,5))
@@ -54,7 +55,7 @@ def fn_cumul(event):
 def fn_semaine(event):
     _temp = "Passage par semaine"
 
-    donnees.element.innerHTML = ""
+    donnees.innerHTML = ""
 
     _x = df['sem'].to_list()
     _y = df['mètres']/1000
@@ -71,7 +72,7 @@ def fn_semaine(event):
 def fn_mois(event):
     _temp = "Cumul mois"
     #donnees.clear()
-    donnees.element.innerHTML = ""
+    donnees.innerHTML = ""
     ut.affiche(message, _temp)
     df_mois = df.groupby('mois')['mètres'].sum()/1000
     _x = df_mois.index.to_list()
@@ -85,7 +86,7 @@ def fn_mois(event):
 def fn_tableau(event):
     _temp = "Détail des sorties"
     #donnees.clear()
-    donnees.element.innerHTML = ""
+    donnees.innerHTML = ""
     ut.affiche(message, _temp)
     ut.affiche(donnees, df.tail(20).to_html())
 
