@@ -70,8 +70,8 @@ def fn_semaine(event):
     ax = plt.stem(_x,_y)
     ut.affiche(message, _temp)
 
-    #display(fig, target="donnees")
-    ut.affiche(donnees, fig)
+    display(fig, target="donnees")
+    #ut.affiche(donnees, fig)
 
 
 def fn_mois(event):
@@ -86,8 +86,8 @@ def fn_mois(event):
     ax = plt.bar(_x,df_mois, width=0.8, align="center")
 
     #ut.affiche(donnees, df_mois[2])
-    #display(fig, target="donnees")
-    ut.affiche(donnees, fig)
+    display(fig, target="donnees")
+    #ut.affiche(donnees, fig)
 
 def fn_tableau(event):
     _temp = "Détail des sorties"
