@@ -50,8 +50,8 @@ def fn_cumul(event):
     
     ax = plt.plot(df['nb jours'], df['cum'], 'o--', color='teal')
     
-    #display(fig, target="donnees")
-    ut.affiche(donnees, fig)
+    display(fig, target="donnees")
+    #ut.affiche(donnees, fig)
 
 
 
