@@ -155,12 +155,12 @@ Visualisation des donn&eacute;es Strava
 Total 2025 :
 <br />
     - Cumul = {df['cum'].to_list()[-1]} km,<br />
-    - Type de vélo : <br />
-        # pelso : {bilan_cat['pelso']:0.2f} km <br />
-        # wilierT : {bilan_cat['wilierT']:0.2f} km </br>
-        # giantRevolt : {bilan_cat['giantRevolt']:0.2f} km 
+    """
+#    - Type de vélo : <br />
+#        # pelso : {bilan_cat['pelso']:0.2f} km <br />
+#        # wilierT : {bilan_cat['wilierT']:0.2f} km </br>
+#        # giantRevolt : {bilan_cat['giantRevolt']:0.2f} km 
         
-"""
 
 
 # affiche(donnees, message)
