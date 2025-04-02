@@ -31,9 +31,9 @@ def traitement_donnees(event):
         
     else:
         #do.write("<img src='images/cumul_velo.png' />")
-        #do.innerHTML = f"<img src='images/cumul_velo.png' />"
+        do.innerHTML = f"<img src='images/cumul_velo.png' />"
         #do.innerHTML = f"<img src='https://docs.google.com/spreadsheets/d/e/2PACX-1vTzRuweEgvJ_ZdOKO_HwD008mGmfIWQlWPaAJWHOpJbG43j07iuLrwdFnGy102V17rnC3JO0flQCxew/pubchart?oid=12&format=interactive' />"
-        display("<img src='images/cumul_velo.png' />", target="donnees")
+        #display("<img src='images/cumul_velo.png' />", target="donnees")
         flag += 1
 
         
