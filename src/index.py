@@ -155,7 +155,7 @@ Visualisation des donn&eacute;es Strava
 <br />
 Total 2025 :
 <br />
-    - Cumul = {df['cum'].to_list()[-1]} km,<br />
+    - Cumul = {round(df['cum'].to_list()[-1],2)} km,<br />
     """
 #    - Type de vélo : <br />
 #        # pelso : {bilan_cat['pelso']:0.2f} km <br />
