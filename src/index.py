@@ -32,8 +32,8 @@ def traitement_donnees(event):
     else:
         #do.write("<img src='images/cumul_velo.png' />")
         #do.innerHTML = f"<img src='images/cumul_velo.png' />"
-        do.innerHTML = f"<img src='https://docs.google.com/spreadsheets/d/e/2PACX-1vTzRuweEgvJ_ZdOKO_HwD008mGmfIWQlWPaAJWHOpJbG43j07iuLrwdFnGy102V17rnC3JO0flQCxew/pubchart?oid=12&format=interactive' />"
-        #display("<img src='images/cumul_velo.png' />", target="donnees')
+        #do.innerHTML = f"<img src='https://docs.google.com/spreadsheets/d/e/2PACX-1vTzRuweEgvJ_ZdOKO_HwD008mGmfIWQlWPaAJWHOpJbG43j07iuLrwdFnGy102V17rnC3JO0flQCxew/pubchart?oid=12&format=interactive' />"
+        display("<img src='images/cumul_velo.png' />", target="donnees')
         flag += 1
 
         
@@ -67,8 +67,8 @@ def fn_semaine(event):
 
     fig, ax = plt.subplots(figsize=(4,4))
     ax.set_xlim(0,53)
-    #ax = plt.plot(_x,_y, 'o--', color='green' )
-    ax = plt.stem(_x,_y)
+    ax = plt.plot(_x,_y, 'o--', color='green' )
+    #ax = plt.stem(_x,_y)
     ut.affiche(message, _temp)
 
     display(fig, target="donnees")
